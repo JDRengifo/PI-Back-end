@@ -1,11 +1,11 @@
 const { Abogados } = require("../db");
 
-const createAbogadoBd = async (id, matricula, nombre, apellido, correo, telefono, calle, numero,codigo_postal, ciudad, pais, clientes) => {
+const createAbogadoBd = async (id, matricula, nombre, apellido, correo, telefono, calle, numero,codigo_postal, ciudad, pais) => {
     // console.log('imagen',imagen)
 
-    const newAbogado = await Abogado.create({id, matricula, nombre, apellido, correo, telefono, calle, numero,codigo_postal, ciudad, pais})
+    const newAbogado = await Abogado.create({id, matricula, nombre, apellido, correo, telefono, calle, numero, codigo_postal, ciudad, pais})
    
-     newAbogado.addCliente(clientes);
+    //  newAbogado.addCliente(clientes);
    
     return newAbogado
     

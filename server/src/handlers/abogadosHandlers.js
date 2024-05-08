@@ -1,3 +1,4 @@
+const { getAbogadoById } = require("../controllers/getAbogadoById");
 const { getAllAbogados } = require("../controllers/getAllAbogados");
 const { createAbogadoBd } = require("../controllers/postAbogadosController");
 
@@ -13,10 +14,10 @@ const getAbogadosHandler = async (req, res)=>{
 
 // Creando Abogados
 const postAbogadosHandler = async (req, res)=>{
-    const { id, matricula, nombre, apellido, correo, telefono, calle, numero,codigo_postal, ciudad, pais, clientes } = req.body;
+    const { id, matricula, nombre, apellido, correo, telefono, calle, numero, codigo_postal, ciudad, pais, clientes } = req.body;
 console.log('Julian3')
     try {
-        const response = await createAbogadoBd(id, matricula, nombre, apellido, correo, telefono, calle, numero,codigo_postal, ciudad, pais, clientes);
+        const response = await createAbogadoBd(id, matricula, nombre, apellido, correo, telefono, calle, numero, codigo_postal, ciudad, pais, clientes);
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error: error.message});
@@ -24,8 +25,22 @@ console.log('Julian3')
     // res.status(200).send(`creando actividades`);
 };
 
+const getAbogadoDetailHandler = async (req, res)=>{
+    const {id} = req.params;
+    
+try {
+    const response = await getAbogadoById(id);
+    res.status(200).json(response);
+   
+} catch (error) {
+    res.status(400).json(error = error.message)
+}
+}
+
+
 module.exports = {
     getAbogadosHandler,
+    getAbogadoDetailHandler,
     postAbogadosHandler,
     
 }
