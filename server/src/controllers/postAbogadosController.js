@@ -1,4 +1,4 @@
-const { Abogados } = require("../db");
+const { Abogado } = require("../db");
 
 const createAbogadoBd = async (id, matricula, nombre, apellido, correo, telefono, calle, numero,codigo_postal, ciudad, pais) => {
     // console.log('imagen',imagen)

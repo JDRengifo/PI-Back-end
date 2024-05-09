@@ -30,22 +30,22 @@ sequelize.define("Abogado",{
     }, 
     calle:{
       type: DataTypes.STRING,
-      unique: true
+      
     }, 
     numero:{
       type: DataTypes.STRING,
     }, 
     codigo_postal:{
       type: DataTypes.INTEGER,
-      unique: true
+      
     }, 
     ciudad:{
       type: DataTypes.STRING,
-      unique: true
+      
     }, 
     pais:{
       type: DataTypes.STRING,
-      unique: true
+      
     }, 
     telefono:{
       type: DataTypes.INTEGER,
@@ -53,7 +53,8 @@ sequelize.define("Abogado",{
     }, 
   
     email:{
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: true
     }
   })
 }
